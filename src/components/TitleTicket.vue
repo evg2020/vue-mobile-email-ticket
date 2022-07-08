@@ -8,7 +8,7 @@
         </div>
       </div>
     </div>
-  
+
 </template>
 <script>
 export default {
@@ -19,7 +19,7 @@ export default {
 <style  scoped>
 .container {
   margin-top: 0px;
-  max-width: 1100px;
+  max-width: 1000px;
   margin-bottom: 40px;
 }
 

@@ -4,12 +4,15 @@ import emails from './modules/emails'
 
 Vue.use(Vuex)
 
-export default new Vuex.Store({
+const store = new Vuex.Store({
   state: {},
   getters: {},
   mutations: {},
   actions: {},
   modules: {
-    emails
+    emails  ///store
   }
 })
+store.dispatch('initEmailStore')
+
+export default store

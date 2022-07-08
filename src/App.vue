@@ -1,21 +1,39 @@
 <template>
   <div id="app">
-    <TitleTicket  />
+    <TitleTicket />
     <ButtonHeader />
-
+    <EmailContainer :list="allEmailsList" />
   </div>
 </template>
 
 <script>
 import TitleTicket from './components/TitleTicket.vue';
 import ButtonHeader from './components/ButtonHeader.vue';
+import EmailContainer from './components/EmailContainer.vue';
+
+import { mapActions, mapGetters } from 'vuex';
 
 export default {
   name: 'App',
+  data: () => ({}),
   components: {
     TitleTicket,
-    ButtonHeader
+    ButtonHeader,
+    EmailContainer,
   },
+  computed: {
+    ...mapGetters('emails', ['allEmailsList']),
+  },
+  mounted() {
+    this.webSocket();
+    // setTimeout(()=>{
+    //   this.webSocket();
+    // },10000)
+      },
+
+      methods: {
+        ...mapActions('emails', ['webSocket']),
+      },
 };
 </script>
 
